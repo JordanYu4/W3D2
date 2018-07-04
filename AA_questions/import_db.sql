@@ -58,7 +58,10 @@ VALUES
   ('Eric', 'Tran'),
   ('Bob', 'Builder'),
   ('Mom', 'Tran'),
-  ('Amanda', 'Yu');
+  ('Amanda', 'Yu'),
+  ('Ryan', 'Gosling'),
+  ('Hugh', 'Jackman'),
+  ('Rachel', 'McAdams');
 
 INSERT INTO
   questions (title, body, author_id)
@@ -80,6 +83,18 @@ VALUES
   ),
   (
     (SELECT id FROM users WHERE fname = 'Eric'),
+    (SELECT id FROM questions WHERE title = 'Job')
+  ),
+  (
+    (SELECT id FROM users WHERE fname = 'Ryan'),
+    (SELECT id FROM questions WHERE title = 'Job')
+  ),
+  (
+    (SELECT id FROM users WHERE fname = 'Rachel'),
+    (SELECT id FROM questions WHERE title = 'Help')
+  ),
+  (
+    (SELECT id FROM users WHERE fname = 'Hugh'),
     (SELECT id FROM questions WHERE title = 'Job')
   );
 
